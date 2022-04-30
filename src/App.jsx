@@ -11,13 +11,13 @@ import Profile from "./Layout/Profile";
 import Navbar from "./Layout/Navbar";
 import Header from "./Layout/Header";
 
-import useGetData from "./helpers/useGetData";
+import useGetPokemons from "./helpers/useGetPokemons";
 
 function App() {
   const [user, setUser] = useState({});
   const url = "https://pokeapi.co/api/v2";
   let limit = 50;
-  const [pokemons, loading, error] = useGetData(url, limit);
+  const [pokemons, loading, error] = useGetPokemons(url, limit);
 
   useEffect(() => {
     setUser(testUser);

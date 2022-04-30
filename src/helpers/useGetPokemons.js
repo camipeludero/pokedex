@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-
-const useGetData = (url, limit) => {
-
-
+const useGetPokemons = (url, limit) => {
     const [pokemons, setPokemons] = useState({
         data: [],
         loading: true,
@@ -46,6 +43,7 @@ const useGetData = (url, limit) => {
     };
 
     return [pokemons.data, pokemons.loading, pokemons.error]
+
 }
 
-export default useGetData
+export default useGetPokemons
