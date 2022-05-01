@@ -1,12 +1,15 @@
-import React from 'react'
+import React from "react";
 
-const Search = ({handleSearch}) => {
-
+const Search = ({ handleSearch }) => {
   return (
     <>
-        <input type="text" name='search' onChange={handleSearch}/>
+      <input
+        type="text"
+        name="search"
+        onChange={(e) => handleSearch(e.target.value)}
+      />
     </>
-  )
-}
+  );
+};
 
-export default Search
+export default Search;

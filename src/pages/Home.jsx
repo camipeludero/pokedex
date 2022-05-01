@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Context } from "../components/Context";
-import PokeList from "../components/PokeList";
+import PokeList from "../components/MyPokemons";
 
 const Home = () => {
   const { user, setUser } = useContext(Context);

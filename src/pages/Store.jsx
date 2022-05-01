@@ -1,18 +1,10 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Context } from "../components/Context";
-import { filterPokemonByName } from "../components/functions";
-import PokeCard from "../components/PokeCard";
-import Search from "../components/Search";
+import PokemonList from "../components/PokemonList";
 
 const Store = () => {
   const { user, setUser } = useContext(Context);
   const { pokeList } = useContext(Context);
-
-  const [search, setSearch] = useState({
-    searching: false, 
-    query: '',
-    results: []
-  });
 
   const buyPokemon = (e) => {
     e.preventDefault();
@@ -45,28 +37,9 @@ const Store = () => {
     }
   };
 
-  const handleSearch = (e) => {
-    e.preventDefault();
-    setSearch(
-      {
-        searching: true, 
-        query: e.target.value.toLowerCase(),
-        results: filterPokemonByName(pokeList, search.query)
-      }
-        
-    )
-}
-
-
   return (
     <>
-    <Search pokeList={pokeList} handleSearch={handleSearch}/>
-      {search.searching ? search.results.map((pokemon) => (
-        <PokeCard type={"store"} pokemon={pokemon} buyPokemon={buyPokemon} />
-      )) : pokeList.map((pokemon) => (
-        <PokeCard type={"store"} pokemon={pokemon} buyPokemon={buyPokemon} />
-      ))}
-      
+      <PokemonList buyPokemon={buyPokemon} />
     </>
   );
 };

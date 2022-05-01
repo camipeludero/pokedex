@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Context } from "../components/Context";
-import PokeList from "../components/PokeList";
+import PokeList from "../components/MyPokemons";
 
 const Profile = () => {
   const { user, setUser } = useContext(Context);
