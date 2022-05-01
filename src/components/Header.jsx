@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Context } from "../components/Context";
+import { Context } from "./Context";
 
 const Header = () => {
   const { user, setUser } = useContext(Context);

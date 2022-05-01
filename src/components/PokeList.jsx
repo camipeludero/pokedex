@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 const PokeList = () => {
   const { user } = useContext(Context);
 
-  console.log(user);
   return (
     <>
       <p>Mis pokemons: </p>
