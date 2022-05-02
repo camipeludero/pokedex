@@ -39,7 +39,9 @@ const Store = () => {
 
   return (
     <>
-      <PokemonList buyPokemon={buyPokemon} />
+      <section className="container">
+        <PokemonList buyPokemon={buyPokemon} searchConfig={false} />
+      </section>
     </>
   );
 };

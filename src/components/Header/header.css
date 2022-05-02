@@ -1,0 +1,9 @@
+
+.logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000000;
+    gap: 12px;
+    font-size: 1rem;
+}

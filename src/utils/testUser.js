@@ -4,7 +4,7 @@ const testUser = () => {
         name: 'admin',
         email: 'admin@admin.com',
         pass: 'admin',
-        pokecoins: 100,
+        pokecoins: 1000,
         ownsPokemons: false,
         pokemons: []
     }

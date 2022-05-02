@@ -21,21 +21,24 @@ const useGetPokemons = (url, limit) => {
                 const details = await axios(`${res.data.results[i].url}`);
 
 
-            
-                
+
+
                 let aux = {
                     id: details.data.id,
                     name: details.data.name,
-                    image: details.data.sprites.other.dream_world.front_default,
+                    image: details.data.sprites.other['official-artwork'].front_default,
+                    height: details.data.height,
+                    weight: details.data.weight,
                     types: details.data.types,
-                    stats: {
-                        [details.data.stats[0].stat.name]: details.data.stats[0].base_stat,
-                        [details.data.stats[1].stat.name]: details.data.stats[1].base_stat,
-                        [details.data.stats[2].stat.name]: details.data.stats[2].base_stat,
-                        [details.data.stats[3].stat.name]: details.data.stats[3].base_stat,
-                        [details.data.stats[4].stat.name]: details.data.stats[4].base_stat,
-                        [details.data.stats[5].stat.name]: details.data.stats[5].base_stat,
-                    },
+                    abilities: details.data.abilities,
+                    stats: [
+                        { [details.data.stats[0].stat.name]: details.data.stats[0].base_stat },
+                        { [details.data.stats[1].stat.name]: details.data.stats[1].base_stat },
+                        { [details.data.stats[2].stat.name]: details.data.stats[2].base_stat },
+                        { [details.data.stats[3].stat.name]: details.data.stats[3].base_stat },
+                        { [details.data.stats[4].stat.name]: details.data.stats[4].base_stat },
+                        { [details.data.stats[5].stat.name]: details.data.stats[5].base_stat }
+                    ],
                     moves: details.data.moves,
                     xp: details.data.base_experience
                 };
@@ -49,7 +52,7 @@ const useGetPokemons = (url, limit) => {
                 error: null,
                 loading: false,
             });
-            
+
         } catch (error) {
             setPokemons({
                 data: [],

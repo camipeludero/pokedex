@@ -1,7 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root{
+    --rock: #B69E31;
+    --ghost: #70559B;
+    --steel: #B7B9D0;
+    --water: #6493EB;
+    --grass: #74CB48;
+    --psychic: #FB5584;
+    --fairy: #ffb3c9;
+    --ice: #9AD6DF;
+    --dark: #75574C;
+    --normal: #AAA67F;
+    --fighting: #C12239;
+    --flying: #A891EC;
+    --poison: #A43E9E;
+    --ground: #DEC16B;
+    --bug: #A7B723;
+    --fire: #F57D31;
+    --electric: #F9CF30;
+}
+
 *, *::before, *::after{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+body{
+    font-family: 'League Spartan', sans-serif;
+}
+a{
+    text-decoration: none;
+}
+
+input{
+    outline: none;
+}
+
+.text-capitalize{
+    text-transform: capitalize;
 }
 
 .pokeCard {
@@ -31,3 +67,183 @@ nav{
     align-items: center;
     padding: 40px;
 }
+
+
+/* Pokemon Types */
+
+.bg_rock {
+
+    background: var(--rock);
+}
+.bg_ghost {
+
+    background: var(--ghost);
+}
+.bg_steel {
+
+    background: var(--steel);
+}
+.bg_water {
+
+    background: var(--water);
+}
+.bg_grass {
+
+    background: var(--grass);
+}
+.bg_physic {
+
+    background: var(--psychic);
+}
+.bg_ice {
+
+    background: var(--ice);
+}
+.bg_dark {
+
+    background: var(--dark);
+}
+.bg_normal {
+
+    background: var(--normal);
+}
+.bg_fighting {
+
+    background: var(--fighting);
+}
+.bg_flying {
+
+    background: var(--flying);
+}
+.bg_poison {
+
+    background: var(--poison);
+}
+.bg_ground {
+
+    background: var(--ground);
+}
+.bg_bug {
+
+    background: var(--bug);
+}
+.bg_fire {
+
+    background: var(--fire);
+}
+.bg_fairy {
+
+    background: var(--fairy);
+}
+.bg_electric {
+
+    background: var(--electric);
+}
+
+
+.color_rock {
+
+    color: var(--rock);
+}
+.color_ghost {
+
+    color: var(--ghost);
+}
+.color_steel {
+
+    color: var(--steel);
+}
+.color_water {
+
+    color: var(--water);
+}
+.color_grass {
+
+    color: var(--grass);
+}
+.color_physic {
+
+    color: var(--psychic);
+}
+.color_ice {
+
+    color: var(--ice);
+}
+.color_dark {
+
+    color: var(--dark);
+}
+.color_normal {
+
+    color: var(--normal);
+}
+.color_fighting {
+
+    color: var(--fighting);
+}
+.color_flying {
+
+    color: var(--flying);
+}
+.color_poison {
+
+    color: var(--poison);
+}
+.color_ground {
+
+    color: var(--ground);
+}
+.color_bug {
+
+    color: var(--bug);
+}
+.color_fire {
+
+    color: var(--fire);
+}
+.color_fairy {
+
+    color: var(--fairy);
+}
+.color_electric {
+
+    color: var(--electric);
+}
+
+
+/* Pokemon List */
+
+.pokemonList{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+
+.searchbar{
+   background: #E5E5E5;
+   border: none;
+   border-radius: 30px;
+   font-size: 1.5rem;
+   font-family: inherit;
+   padding: 12px;
+   text-align: center;
+   color: #838282;
+   width: 80%;
+   max-width: 450px;
+}
+
+input.searchbar::placeholder{
+    color: #aeaeae;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+}
+
+

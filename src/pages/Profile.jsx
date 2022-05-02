@@ -4,6 +4,7 @@ import PokeList from "../components/MyPokemons";
 
 const Profile = () => {
   const { user, setUser } = useContext(Context);
+
   return (
     <>
       <h4>Mi Perfil</h4>

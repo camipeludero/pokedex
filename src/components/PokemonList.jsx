@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Context } from "./Context";
 import { filterPokemonByName } from "./functions";
-import PokeCard from "./PokeCard";
+import PokeCard from "./PokeCard/PokeCard";
 import PokeList from "./PokemonList";
 import Search from "./Search";
 
@@ -16,7 +16,7 @@ const PokemonList = ({ buyPokemon }) => {
   });
 
   const handleSearch = (value) => {
-    if (value !== "") {
+    if (value.trim() !== "") {
       setSearch({
         searching: true,
         query: value.toLowerCase(),
@@ -34,21 +34,24 @@ const PokemonList = ({ buyPokemon }) => {
   return (
     <>
       <Search pokeList={pokeList} handleSearch={handleSearch} />
-      {search.searching
-        ? search.results.map((pokemon) => (
-            <PokeCard
-              type={"store"}
-              pokemon={pokemon}
-              buyPokemon={buyPokemon}
-            />
-          ))
-        : pokeList.map((pokemon) => (
-            <PokeCard
-              type={"store"}
-              pokemon={pokemon}
-              buyPokemon={buyPokemon}
-            />
-          ))}
+      <div className="pokemonList">
+        {search.searching
+          ? search.results.map((pokemon) => (
+              <PokeCard
+                key={pokemon.id}
+                type={"store"}
+                pokemon={pokemon}
+                buyPokemon={buyPokemon}
+              />
+            ))
+          : pokeList.map((pokemon) => (
+              <PokeCard
+                type={"store"}
+                pokemon={pokemon}
+                buyPokemon={buyPokemon}
+              />
+            ))}{" "}
+      </div>
     </>
   );
 };
