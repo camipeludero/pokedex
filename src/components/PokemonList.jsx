@@ -1,57 +1,41 @@
-import React, { useState, useEffect, useContext } from "react";
-import { Context } from "./Context";
-import { filterPokemonByName } from "./functions";
+import React, { useEffect, useState } from "react";
 import PokeCard from "./PokeCard/PokeCard";
-import PokeList from "./PokemonList";
-import Search from "./Search";
+import { Grid, Container, Skeleton } from "@mui/material";
 
-const PokemonList = ({ buyPokemon }) => {
-  const { pokeList } = useContext(Context);
-  const { user, setUser } = useContext(Context);
+const PokemonList = ({ pokeList, loading = false, type }) => {
+  //todo: loading cards optimization
 
-  const [search, setSearch] = useState({
-    searching: false,
-    query: "",
-    results: [],
-  });
+  const array = [];
 
-  const handleSearch = (value) => {
-    if (value.trim() !== "") {
-      setSearch({
-        searching: true,
-        query: value.toLowerCase(),
-        results: filterPokemonByName(pokeList, search.query),
-      });
-    } else {
-      setSearch({
-        query: "",
-        searching: false,
-        results: pokeList,
-      });
-    }
-  };
+  for (var i = 0; i < 50; i++) {
+    array.push(i);
+  }
 
   return (
     <>
-      <Search pokeList={pokeList} handleSearch={handleSearch} />
-      <div className="pokemonList">
-        {search.searching
-          ? search.results.map((pokemon) => (
-              <PokeCard
-                key={pokemon.id}
-                type={"store"}
-                pokemon={pokemon}
-                buyPokemon={buyPokemon}
-              />
-            ))
-          : pokeList.map((pokemon) => (
-              <PokeCard
-                type={"store"}
-                pokemon={pokemon}
-                buyPokemon={buyPokemon}
-              />
-            ))}{" "}
-      </div>
+      <Container sx={{ py: 8 }} maxWidth="lg">
+        <Grid container spacing={2}>
+          {loading
+            ? array.map((item) => (
+                <>
+                  <Grid item key={item} xs={6} sm={4} md={3}>
+                    <Skeleton
+                      animation="wave"
+                      height={"250px"}
+                      sx={{ borderRadius: "10%" }}
+                    />
+                  </Grid>
+                </>
+              ))
+            : pokeList.map((pokemon) => (
+                <>
+                  <Grid item key={pokemon.name} xs={6} sm={4} md={3}>
+                    <PokeCard type={type} pokemon={pokemon} />
+                  </Grid>
+                </>
+              ))}
+        </Grid>
+      </Container>
     </>
   );
 };

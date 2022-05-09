@@ -1,17 +1,12 @@
-import React, { useContext } from "react";
-import { Context } from "../components/Context";
-import PokeList from "../components/MyPokemons";
+import React from "react";
+import LoadingPage from "../components/Loading/LoadingPage";
 
 const Profile = () => {
-  const { user, setUser } = useContext(Context);
+  //todo: merge with Login branch ->user info
 
   return (
     <>
-      <h4>Mi Perfil</h4>
-      <p>Nombre: {user.name}</p>
-      <p>Email: {user.email}</p>
-
-      <button>Editar perfil</button>
+      <LoadingPage />
     </>
   );
 };

@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { Box, Fab } from "@mui/material";
-import StorefrontIcon from "@mui/icons-material/Storefront";
+import IconPokeball from "./IconPokeball";
 import HomeIcon from "@mui/icons-material/Home";
 import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 
@@ -24,11 +24,11 @@ const Navbar = () => {
         }}
       >
         <NavLink
-          to={`/store`}
+          to={`/pokedex`}
           className={({ isActive }) => (isActive ? "selected-link" : undefined)}
         >
           <Fab color="primary" aria-label="store" size="medium">
-            <StorefrontIcon />
+            <IconPokeball color={"#ffffff"} width="18px" />
           </Fab>
         </NavLink>
         <NavLink

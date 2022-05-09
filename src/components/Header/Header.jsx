@@ -1,21 +1,29 @@
-import React, { useContext } from "react";
-import { Context } from "../Context";
-import IconPokeball from "../IconPokeball";
+import React from "react";
 import Logo from "./Logo";
-import "./header.css";
+import { AppBar, Toolbar, Box } from "@mui/material";
+import { styled } from "@mui/material/styles";
+
+const StyledToolbar = styled(Toolbar)(({ theme }) => ({
+  padding: theme.spacing(2),
+  // Override media queries injected by theme.mixins.toolbar
+  "@media all": {
+    minHeight: 128,
+  },
+}));
 
 const Header = () => {
-  const { user, setUser } = useContext(Context);
   return (
     <>
-      <div className="header">
-        <p>≡</p>
-        <Logo />
-        <p>
-          <IconPokeball height={"1rem"} width={"1rem"} color={"#666666"} />
-          {user.pokecoins}
-        </p>
-      </div>
+      <Box sx={{ flexGrow: 1 }}>
+        <AppBar position="static" sx={{ background: "#ffffff" }} elevation={0}>
+          <StyledToolbar>
+            <Logo />
+            {
+              //todo: Add Pokecoins info when user is authenticated
+            }
+          </StyledToolbar>
+        </AppBar>
+      </Box>
     </>
   );
 };

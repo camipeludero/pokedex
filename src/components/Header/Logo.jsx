@@ -1,16 +1,29 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import IconPokeball from "../IconPokeball";
+import logo from "../../assets/images/logo.png";
+
+const styles = {
+  logo: {
+    margin: "auto",
+    textAlign: "center",
+    maxWidth: "200px",
+  },
+  centeredLogo: {
+    position: "absolute",
+    left: "50%",
+    top: "50%",
+    transform: "translate(-50%, -50%)",
+  },
+};
 
 const Logo = () => {
   return (
     <>
-      <Link to={"/"}>
-        <div className="logo">
-          <IconPokeball height={"2rem"} width={"2rem"} color={"#000000"} />
-          <h1>Pokegame</h1>
-        </div>
-      </Link>
+      <div style={styles.centeredLogo}>
+        <Link to={"/"}>
+          <img src={logo} style={styles.logo} alt="logo" />
+        </Link>
+      </div>
     </>
   );
 };

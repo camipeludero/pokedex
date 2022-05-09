@@ -25,6 +25,7 @@ const useGetPokemons = (url, limit) => {
 
                 let aux = {
                     id: details.data.id,
+                    numId: details.data.id.toString().padStart(3, "0"),
                     name: details.data.name,
                     image: details.data.sprites.other['official-artwork'].front_default,
                     height: details.data.height,
@@ -62,7 +63,7 @@ const useGetPokemons = (url, limit) => {
         }
     };
 
-    return [pokemons.data, pokemons.loading, pokemons.error]
+    return [pokemons.data, pokemons.loading, pokemons.error];
 
 }
 

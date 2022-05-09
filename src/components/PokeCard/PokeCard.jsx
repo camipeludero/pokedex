@@ -1,9 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import IconPokeball from "../IconPokeball";
 import "./pokeCard.css";
 
-const PokeCard = ({ pokemon, type, buyPokemon }) => {
+const PokeCard = ({ pokemon, type }) => {
   return (
     <>
       <Link to={`/pokemon/${pokemon.id}`}>
@@ -12,7 +11,7 @@ const PokeCard = ({ pokemon, type, buyPokemon }) => {
             <img src={pokemon.image} />
           </div>
           <div className="pokecard__header">
-            <span className="poke__id">#{pokemon.id}</span>
+            <span className="poke__id">#{pokemon.numId}</span>
             <h5 className="poke__name">{pokemon.name}</h5>
           </div>
           <div className="pokecard__types">
@@ -26,23 +25,7 @@ const PokeCard = ({ pokemon, type, buyPokemon }) => {
             ))}
           </div>
 
-          {type === "store" && (
-            <button
-              name={"comprar"}
-              data-id={`${pokemon.id}`}
-              onClick={buyPokemon}
-            >
-              <span>
-                <IconPokeball
-                  height={"1rem"}
-                  width={"1rem"}
-                  color={"#666666"}
-                />{" "}
-                {pokemon.xp}
-              </span>
-              ADD
-            </button>
-          )}
+          {/*todo: add pokemon button when user is authenticated*/}
         </div>
       </Link>
     </>
