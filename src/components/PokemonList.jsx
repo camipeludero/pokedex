@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import PokeCard from "./PokeCard/PokeCard";
 import { Grid, Container, Skeleton } from "@mui/material";
 
@@ -20,6 +20,7 @@ const PokemonList = ({ pokeList, loading = false, type }) => {
                 <>
                   <Grid item key={item} xs={6} sm={4} md={3}>
                     <Skeleton
+                      key={item}
                       animation="wave"
                       height={"250px"}
                       sx={{ borderRadius: "10%" }}
@@ -30,7 +31,11 @@ const PokemonList = ({ pokeList, loading = false, type }) => {
             : pokeList.map((pokemon) => (
                 <>
                   <Grid item key={pokemon.name} xs={6} sm={4} md={3}>
-                    <PokeCard type={type} pokemon={pokemon} />
+                    <PokeCard
+                      key={pokemon.name}
+                      type={type}
+                      pokemon={pokemon}
+                    />
                   </Grid>
                 </>
               ))}

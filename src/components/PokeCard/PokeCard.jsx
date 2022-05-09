@@ -8,7 +8,7 @@ const PokeCard = ({ pokemon, type }) => {
       <Link to={`/pokemon/${pokemon.id}`}>
         <div className="pokecard">
           <div className="pokecard__img">
-            <img src={pokemon.image} />
+            <img src={pokemon.image} alt={pokemon.name} />
           </div>
           <div className="pokecard__header">
             <span className="poke__id">#{pokemon.numId}</span>

@@ -35,7 +35,7 @@ const Home = () => {
       <Container sx={{ py: 8 }} maxWidth="sm">
         <Card sx={{ background: "#F9CF30" }}>
           <div className={"pokedex_img"}>
-            <img src={pokedexImg} />
+            <img src={pokedexImg} alt={"Pokedex"} />
           </div>
           <CardContent>
             <Typography variant="h3" gutterBottom component="div">

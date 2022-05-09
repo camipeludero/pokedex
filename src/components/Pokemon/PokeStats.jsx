@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { LinearProgress, Box, Typography } from "@mui/material";
 
 const PokeStats = ({ pokemon }) => {

@@ -28,7 +28,7 @@ const PokeDetails = () => {
             <div className="container">
               <div className="pokedetails">
                 <div className="pokedetails__img">
-                  <img src={pokemon.image} />
+                  <img src={pokemon.image} alt={pokemon.name} />
                 </div>
               </div>
               <div className="pokedetails__header">
