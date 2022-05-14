@@ -1,9 +1,0 @@
-import React from "react";
-import LoadingPage from "../components/Loading/LoadingPage";
-
-const SignUp = () => {
-  //todo: merge with Login branch
-  return <LoadingPage />;
-};
-
-export default SignUp;
