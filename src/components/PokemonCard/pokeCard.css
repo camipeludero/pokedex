@@ -41,6 +41,7 @@ border-radius: 20px;
 .poke__id{
     color: #000000;
     font-size: 1.125rem;
+    align-self: flex-end;
 }
 
 .poke__name{

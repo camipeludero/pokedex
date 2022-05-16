@@ -1,18 +1,21 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from "../../assets/images/pokedex.png";
+import pokedex from "../../assets/images/pokedex.png";
+import pokemonbattle from "../../assets/images/pokemonbattle.png";
 
-import {
-  Container,
-  Button,
-  Card,
-  CardContent,
-  Typography,
-  CssBaseline,
-} from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 
 import pokedexImg from "../../assets/images/pokedex.png";
 import Layout from "../../layouts/Main/Layout";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+
+// import required modules
+import { Pagination } from "swiper";
 
 const Home = () => {
   //todo: user authentication
@@ -32,14 +35,18 @@ const Home = () => {
   return (
     <>
       <Layout>
-        <CssBaseline />
-        <Container sx={{ py: 8 }} maxWidth="sm">
-          <Card sx={{ background: "#F9CF30" }}>
-            <div className={"pokedex_img"}>
-              <img src={pokedexImg} alt={"Pokedex"} />
-            </div>
-            <CardContent>
-              <Typography variant="h3" gutterBottom component="div">
+        <Swiper
+          pagination={{
+            clickable: true,
+          }}
+          loop={true}
+          modules={[Pagination]}
+          className="mySwiper"
+        >
+          <SwiperSlide className="slide1">
+            <Box>
+              <img src={pokedex} alt="pokedex" />
+              <Typography variant="h4" gutterBottom component="div">
                 Encuentra a tus pokemons favoritos
               </Typography>
               <Typography>
@@ -49,20 +56,24 @@ const Home = () => {
               <Link to={"/pokedex"}>
                 <Button variant="contained">Ir a la Pokedex</Button>
               </Link>
-            </CardContent>
-          </Card>
-          <Card sx={{ background: "#9AD6DF" }}>
-            <CardContent>
-              <img src={logo} alt="logo" />
-              <Typography variant="h3" gutterBottom component="div">
-                BATTLE
+            </Box>
+          </SwiperSlide>
+          <SwiperSlide className="slide2">
+            <Box>
+              <img src={pokemonbattle} alt="pokedex" />
+              <Typography variant="h4" gutterBottom component="div">
+                Pokemon Battle
+              </Typography>
+              <Typography>
+                Conviertete en el mejor entrenador pokemon y demuestra tus
+                habilidades.
               </Typography>
               <Link to={"/battle"}>
                 <Button variant="contained">JUGAR</Button>
               </Link>
-            </CardContent>
-          </Card>
-        </Container>
+            </Box>
+          </SwiperSlide>
+        </Swiper>
       </Layout>
     </>
   );

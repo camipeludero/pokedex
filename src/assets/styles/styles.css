@@ -17,7 +17,7 @@
     --ground: #DEC16B;
     --bug: #A7B723;
     --fire: #F57D31;
-    --electric: #F9CF30;
+    --electric: #FFBD12;
 }
 
 *, *::before, *::after{
@@ -91,7 +91,7 @@ nav{
 
     background: var(--grass);
 }
-.bg_physic {
+.bg_psychic {
 
     background: var(--psychic);
 }
@@ -226,7 +226,7 @@ nav{
     background: #FFFFFF;
 border: 2px solid #18191F;
 border-radius: 16px;
-   font-size: 1.5rem;
+   font-size: 1.125rem;
    font-family: inherit;
    padding: 16px;
    color: #18191F;
@@ -349,4 +349,47 @@ input.searchbar::placeholder{
 
   .navlink:hover{
     color: #F95A2C;
+  }
+
+
+
+  /* Home Swiper */
+
+
+  .mySwiper {
+      position: absolute !important;
+      z-index: -1;
+      top: 0;
+    width: 100%;
+    height: 100vh;
+    font-family: 'Azeret Mono', monospace;
+  }
+  
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: orange;
+  width: 100%;
+  height: 100vh;
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+
+  .slide1{
+      background-color: var(--fire);
+  }
+  
+  .slide2{
+      background-color: var(--electric);
   }

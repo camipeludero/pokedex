@@ -15,9 +15,13 @@ const Header = () => {
   return (
     <>
       <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="static" sx={{ background: "#ffffff" }} elevation={0}>
+        <AppBar
+          position="static"
+          sx={{ background: "transparent" }}
+          elevation={0}
+        >
           <StyledToolbar>
-            <Logo />
+            <Logo className="logo" />
             {
               //todo: Add Pokecoins info when user is authenticated
             }
