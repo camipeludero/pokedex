@@ -5,11 +5,11 @@ const PokeInfo = ({ pokemon }) => {
     <div className="pokedetails__Info">
       <div className="pokeInfo">
         <p>{pokemon.weight / 10}kg</p>
-        <p>Weight</p>
+        <p className="pokeInfo__label">Weight</p>
       </div>
       <div className="pokeInfo">
         <p>{pokemon.height / 10}m</p>
-        <p>Height</p>
+        <p className="pokeInfo__label">Height</p>
       </div>
       <div className="pokeInfo">
         {pokemon.abilities &&
@@ -18,7 +18,7 @@ const PokeInfo = ({ pokemon }) => {
               <p key={ability.slot}>{ability.ability.name}</p>
             </>
           ))}
-        <p>Abilities</p>
+        <p className="pokeInfo__label">Abilities</p>
       </div>
     </div>
   );

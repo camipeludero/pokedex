@@ -25,25 +25,30 @@ const PokeDetails = () => {
           <p>Cargando...</p>
         ) : (
           <>
-            <div className="container">
+            <div className="pokemondetails">
               <div className="pokedetails">
-                <div className="pokedetails__img">
-                  <img src={pokemon.image} alt={pokemon.name} />
+                <div className="pokedetails__bg">
+                  <div className="pokedetails__img">
+                    <img src={pokemon.image} alt={pokemon.name} />
+                  </div>
                 </div>
+                <div className="pokedetails__header">
+                  <h3 className="poke__id">#{pokemon.numId}</h3>
+                  <h2 className="poke__name">{pokemon.name}</h2>
+                </div>
+                <div className="pokedetails__types">
+                  {pokemon.types &&
+                    pokemon.types.map((type) => (
+                      <span
+                        key={type}
+                        className={`pokedetails__type bg_${type}`}
+                      >
+                        {type}
+                      </span>
+                    ))}
+                </div>
+                <PokeInfo pokemon={pokemon} />
               </div>
-              <div className="pokedetails__header">
-                <h3 className="poke__id">#{pokemon.numId}</h3>
-                <h2 className="poke__name">{pokemon.name}</h2>
-              </div>
-              <div className="pokedetails__types">
-                {pokemon.types &&
-                  pokemon.types.map((type) => (
-                    <span key={type} className={`pokedetails__type bg_${type}`}>
-                      {type}
-                    </span>
-                  ))}
-              </div>
-              <PokeInfo pokemon={pokemon} />
               <PokeStats pokemon={pokemon} />
             </div>
           </>

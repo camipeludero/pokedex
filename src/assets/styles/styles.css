@@ -223,20 +223,20 @@ nav{
 
 
 .searchbar{
-   background: #E5E5E5;
-   border: none;
-   border-radius: 30px;
+    background: #FFFFFF;
+border: 2px solid #18191F;
+border-radius: 16px;
    font-size: 1.5rem;
    font-family: inherit;
-   padding: 12px;
-   text-align: center;
-   color: #838282;
+   padding: 16px;
+   color: #18191F;
+   filter: drop-shadow(0px 4px 0px #18191F);
    width: 80%;
    max-width: 450px;
 }
 
 input.searchbar::placeholder{
-    color: #aeaeae;
+    color: #18191F;
 }
 
 .container{
@@ -333,4 +333,20 @@ input.searchbar::placeholder{
     60% { top: 0 }
     80% { top: -20px }
     100% { top: 0 }
+  }
+
+
+  /* Navbar */
+
+  .navlink{
+      font-family: 'Azeret Mono', monospace;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 44px;
+    line-height: 54px;
+    color: #18191F;
+  }
+
+  .navlink:hover{
+    color: #F95A2C;
   }

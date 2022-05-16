@@ -1,9 +1,10 @@
 import React from "react";
 import style from "./Button.module.css";
 
-const Button = ({ onClickFunction, text }) => {
+const Button = ({ onClickFunction, text, variant }) => {
+  let variantClass = style.button_secondary;
   return (
-    <button className={`${style.button}`} onClick={onClickFunction}>
+    <button className={variantClass} onClick={onClickFunction}>
       {text}
     </button>
   );

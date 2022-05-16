@@ -3,13 +3,15 @@ import styles from "./BackUpPlayer.module.css";
 
 const BackUpPlayerCard = ({ player }) => {
   return (
-    <div className={`${styles.backUpPlayerCard}`}>
+    <div
+      className={`${styles.backUpPlayerCard} ${
+        player.has_fainted ? styles.backUpPlayerCardFainted : null
+      }`}
+    >
       <div className={`${styles.backUpPlayerCard__sprite}`}>
         <img src={player.sprites.front} alt={player.name} />
       </div>
-      <p style={player.has_fainted ? { color: "red" } : { color: "green" }}>
-        {player.name}
-      </p>
+      <p>{player.name}</p>
       <p>
         {player.hp}/{player.hpMax}
       </p>

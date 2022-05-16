@@ -1,54 +1,74 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
-import { Box, Fab } from "@mui/material";
-import IconPokeball from "../../components/Icons/IconPokeball";
-import HomeIcon from "@mui/icons-material/Home";
-import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
+import React, { useState } from "react";
+import Fab from "@mui/material/Fab";
+import MenuIcon from "@mui/icons-material/Menu";
+import { Link } from "react-router-dom";
+import Box from "@mui/material/Box";
+import Drawer from "@mui/material/Drawer";
+import Button from "@mui/material/Button";
+import List from "@mui/material/List";
+import Divider from "@mui/material/Divider";
+import ListItem from "@mui/material/ListItem";
+import ListItemButton from "@mui/material/ListItemButton";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import ListItemText from "@mui/material/ListItemText";
+import InboxIcon from "@mui/icons-material/MoveToInbox";
+import MailIcon from "@mui/icons-material/Mail";
 
 const Navbar = () => {
+  const [state, setState] = useState(false);
+
+  const toggleDrawer = (open) => (event) => {
+    if (
+      event.type === "keydown" &&
+      (event.key === "Tab" || event.key === "Shift")
+    ) {
+      return;
+    }
+
+    setState(open);
+  };
+
   return (
     <>
-      <Box
-        position="fixed"
+      <Fab
+        onClick={toggleDrawer(true)}
         sx={{
-          display: {
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            gap: "20px",
-          },
-
-          top: "auto",
-          width: "100vw",
-          bottom: "5%",
+          position: "absolute",
+          top: 16,
+          left: 16,
+          filter: "drop-shadow(0px 2px 0px #18191F)",
+          border: "2px solid #18191F",
+          backgroundColor: "#ffffff",
+          boxShadow: "none",
         }}
+        color="primary"
+        aria-label="add"
       >
-        <NavLink
-          to={`/pokedex`}
-          className={({ isActive }) => (isActive ? "selected-link" : undefined)}
+        <MenuIcon sx={{ color: "#18191F" }} />
+      </Fab>
+
+      <Drawer open={state} onClose={toggleDrawer(false)}>
+        <Box
+          sx={{ width: "300px" }}
+          onClick={toggleDrawer(false)}
+          onKeyDown={toggleDrawer(false)}
         >
-          <Fab color="primary" aria-label="store" size="medium">
-            <IconPokeball color={"#ffffff"} width="18px" />
-          </Fab>
-        </NavLink>
-        <NavLink
-          to={`/`}
-          className={({ isActive }) => (isActive ? "selected-link" : undefined)}
-        >
-          {" "}
-          <Fab color="warning" aria-label="home">
-            <HomeIcon />
-          </Fab>
-        </NavLink>
-        <NavLink
-          to={`/profile`}
-          className={({ isActive }) => (isActive ? "selected-link" : undefined)}
-        >
-          <Fab color="primary" aria-label="profile" size="medium">
-            <PersonOutlineIcon />
-          </Fab>
-        </NavLink>
-      </Box>
+          <List>
+            <Link to={"/"} className={"navlink"}>
+              <ListItem>Home</ListItem>
+            </Link>
+            <Link to={"/pokedex"} className={"navlink"}>
+              <ListItem>Pokedex</ListItem>
+            </Link>
+            <Link to={"/battle"} className={"navlink"}>
+              <ListItem>Games</ListItem>
+            </Link>
+            <Link to={"/profile"} className={"navlink"}>
+              <ListItem>Profile</ListItem>
+            </Link>
+          </List>
+        </Box>
+      </Drawer>
     </>
   );
 };

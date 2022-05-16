@@ -16,7 +16,6 @@ function AppRoutes() {
   return (
     <>
       <BrowserRouter>
-        <Header />
         <Routes>
           <Route exact path={"/battle"} element={<BattleGame />} />
           <Route exact path={"/login"} element={<Login />} />
@@ -26,8 +25,6 @@ function AppRoutes() {
           <Route exact path={"/pokedex"} element={<Pokedex />} />
           <Route exact path={"/profile"} element={<Profile />} />
         </Routes>
-        <Navbar />
-        <Footer />
       </BrowserRouter>
     </>
   );

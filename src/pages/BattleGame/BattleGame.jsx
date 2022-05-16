@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import Layout from "../../layouts/Main/Layout";
+import GameLayout from "../../layouts/Main/GameLayout";
 import { Context } from "../../context/Context";
 import Battle from "./views/Battle";
 import Selection from "./views/Selection";
@@ -7,7 +7,7 @@ import Selection from "./views/Selection";
 const BattleGame = () => {
   const { state } = useContext(Context);
 
-  return <Layout>{state.isReady ? <Battle /> : <Selection />}</Layout>;
+  return <GameLayout>{state.isReady ? <Battle /> : <Selection />}</GameLayout>;
 };
 
 export default BattleGame;

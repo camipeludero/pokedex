@@ -10,15 +10,25 @@
     justify-content: center;
     align-items: center;
     width: 50%;
+    gap: 16px;
 }
 
 .backUpPlayerCard{
     width: 30%;
+    background-color: #ffffff;
     max-width: 96px;
-    border: 1px solid #7E667A;
+    border: 2px solid #000000;
     border-radius: 16px;
     text-align: center;
 }
+
+.backUpPlayerCardFainted{
+    color: #969BAB;
+    border-color: #969BAB; 
+    filter: grayscale(1);
+}
+
+
 
 .backUpPlayerCard__sprite img{
     width: 100%;

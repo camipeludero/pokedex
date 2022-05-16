@@ -14,12 +14,15 @@ import { autocompleteClasses } from "@mui/material";
 
 export const styles = {
   battle: {
-    border: "2px solid black",
-    height: "70vh",
-    maxWidth: "720px",
+    height: "100vh",
+    width: "100%",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between",
+    alignItems: "center",
     margin: "0 auto",
     background:
-      "linear-gradient(180deg, #39E5E1 0%, #9CF6E8 31.78%, #5CD563 35.5%, #67D667 100%)",
+      "linear-gradient(180deg, #39E5E1 0%, #9CF6E8 21.78%, #5CD563 25.5%, #67D667 100%)",
   },
 };
 
@@ -188,10 +191,10 @@ const Battle = () => {
       <div style={styles.battle}>
         {state.isReady && (
           <>
-            <BackUpPlayerContainer
+            {/* <BackUpPlayerContainer
               opponentTeam={opponentTeam}
               userTeam={userTeam}
-            />
+            /> */}
 
             <PlayerBox type={"opponent"} player={opponent} />
             <PlayerBox type={"user"} player={player} />

@@ -1,22 +1,14 @@
 import React from "react";
+import Header from "../Header/Header";
+import Navbar from "../Header/Navbar";
 
 const Layout = ({ children }) => {
   return (
-    <div
-      style={{
-        alignItems: "center",
-        display: "flex",
-        flexDirection: "column",
-      }}
-    >
-      <div
-        style={{
-          width: "100vw",
-        }}
-      >
-        {children}
-      </div>
-    </div>
+    <>
+      <Header />
+      {children}
+      <Navbar />
+    </>
   );
 };
 
