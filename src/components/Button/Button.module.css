@@ -1,6 +1,10 @@
 .button{
-    background: #73D677;
-    box-shadow: inset 0px -9px 0px rgba(0, 0, 0, 0.18);
-    border-radius: 11px;
-    padding: 1em;
+    font-family: 'Azeret Mono', monospace;
+    font-weight: bold;
+    color: #18191F;
+    background: #FFBD12;
+    border: 2px solid #18191F;
+    padding: 16px;
+    box-shadow: 0px 4px 0px #18191F;
+    border-radius: 16px;
 }

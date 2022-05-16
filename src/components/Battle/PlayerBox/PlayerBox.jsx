@@ -9,7 +9,7 @@ const PlayerBox = ({ player, type }) => {
       <div className={styles.playerBox}>
         <PlayerCard type={type} player={player} />
         <PlayerSprite type={type} player={player} />
-        <div className={styles.playerSpriteShadow}></div>
+        <div className={type === 'user' ? styles.playerSpriteShadow_user : styles.playerSpriteShadow_opponent}></div>
       </div>
     </>
   );

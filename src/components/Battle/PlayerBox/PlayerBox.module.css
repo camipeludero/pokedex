@@ -8,37 +8,40 @@
     grid-auto-flow: row;
   }
   
-  .playerBoxCard { 
-      
+  .playerBoxCard_user { 
       background-color: yellow;
       border: 2px solid #000000;
       background: #F8F8D8;
     border-radius: 16px 16px 16px 0px;
     padding: 16px;
+    grid-area: 1 / 4 / 2 / 7; 
     }
 
-    .user {
-        grid-area: 1 / 4 / 2 / 7; 
+     .playerBoxCard_opponent{
+      background-color: yellow;
+      border: 2px solid #000000;
+      background: #F8F8D8;
+      border-radius: 16px 16px 0px 16px;
+      padding: 16px;
+      grid-area: 1 / 1 / 2 / 4;
      }
 
-     .opponent{
-        grid-area: 1 / 1 / 2 / 4;
-     }
-
-      .playerSprite { 
-        grid-area: 1 / 2 / 3 / 4; 
+      .playerSprite__opponent { 
         z-index: 1;
+        grid-area: 1 / 4 / 3 / 6;
       }
   
-  .playerSpriteShadow { 
+
+
+    .playerSpriteShadow_user{
       grid-area: 2 / 1 / 3 / 5; 
       background-color: #1a1a1a34;
       border-radius: 100%;
     }
+     
       
      
       
-      .opponentSprite { grid-area: 1 / 4 / 3 / 6; }
-      
-      .opponentSpriteShadow { grid-area: 2 / 3 / 3 / 7; }
+      .playerSpriteShadow_opponent { grid-area: 2 / 3 / 3 / 7; background-color: #1a1a1a34;
+        border-radius: 100%;  }
       
