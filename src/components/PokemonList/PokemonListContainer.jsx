@@ -4,8 +4,10 @@ import { filterPokemonByName } from "../../services/helpers/functions";
 import PokemonList from "./PokemonList";
 import Search from "../Search/Search";
 
-const PokemonListContainer = () => {
-  const { pokemon_data, pokemon_loading, pokemon_error } = useContext(Context);
+const PokemonListContainer = ({ action, selectPokemon }) => {
+  const { state, dispatch, pokemon_data, pokemon_loading, pokemon_error } =
+    useContext(Context);
+  //const { pokemon_data, pokemon_loading, pokemon_error } = useContext(Context);
 
   const [search, setSearch] = useState({
     searching: false,
@@ -35,6 +37,8 @@ const PokemonListContainer = () => {
 
       {search.searching ? (
         <PokemonList
+          action={action}
+          selectPokemon={selectPokemon}
           pokemon_data={search.results}
           loading={pokemon_loading}
           pokemon_error={pokemon_error}
@@ -42,6 +46,8 @@ const PokemonListContainer = () => {
         />
       ) : (
         <PokemonList
+          action={action}
+          selectPokemon={selectPokemon}
           pokemon_data={pokemon_data}
           loading={pokemon_loading}
           /* todo: type={authState.isAuthenticated ? "add" : null} */

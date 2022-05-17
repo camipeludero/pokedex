@@ -10,8 +10,13 @@ box-shadow: 0px 2px 0px #000000;
 border-radius: 20px;
 }
 
+.selected_card{
+    border: 2px solid var(--grass);
+    box-shadow: 0px 2px 0px var(--grass);
+    background: #74cb482c;
+}
 .pokecard:hover{
-    transform: scale(1.1);
+    transform: scale(1.01);
 }
 
 .pokecard__img{

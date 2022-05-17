@@ -1,16 +1,14 @@
-import React, { useEffect, useContext } from "react";
+import React, { useContext } from "react";
 import { Context } from "../../../context/Context";
 import { types } from "../../../services/types/types";
 import PlayerBox from "../../../components/Battle/PlayerBox/PlayerBox";
-import OpponentBox from "../../../components/Battle/OpponentBox";
 import BattleBox from "../../../components/Battle/BattleBox/BattleBox";
-import BackUpPlayerContainer from "../../../components/Battle/BackUpPlayer/BackUpPlayerContainer";
 import {
   getMoveDamage,
   swap,
   pickARandomMove,
 } from "../../../services/helpers/functions";
-import { autocompleteClasses } from "@mui/material";
+import GameLayout from "../../../layouts/Main/GameLayout";
 
 export const styles = {
   battle: {
@@ -18,7 +16,7 @@ export const styles = {
     width: "100%",
     display: "flex",
     flexDirection: "column",
-    justifyContent: "space-between",
+    justifyContent: "end",
     alignItems: "center",
     margin: "0 auto",
     background:
@@ -185,33 +183,46 @@ const Battle = () => {
   //todo: cambiar el texto de los movimientos
   //todo: FIGHT / SWITCH -> agregar boton de volver atras
   //play again button
+  //eliminar el estado del juego al salir de la pagina
 
+  /* componentDidMount() {
+      
+      } */
+
+  /* componentWillUnmount() {
+        dispatch({
+          type: types.READY_TO_BATTLE, 
+        });
+      }
+    */
   return (
     <>
-      <div style={styles.battle}>
-        {state.isReady && (
-          <>
-            {/* <BackUpPlayerContainer
+      <GameLayout>
+        <div style={styles.battle}>
+          {state.isReady && (
+            <>
+              {/* <BackUpPlayerContainer
               opponentTeam={opponentTeam}
               userTeam={userTeam}
             /> */}
 
-            <PlayerBox type={"opponent"} player={opponent} />
-            <PlayerBox type={"user"} player={player} />
+              <PlayerBox type={"opponent"} player={opponent} />
+              <PlayerBox type={"user"} player={player} />
 
-            <BattleBox
-              state={state}
-              setNextAction={setNextAction}
-              backUpPlayers={backUpPlayers}
-              switchPlayer={switchPlayer}
-              player={player}
-              userTeam={userTeam}
-              attackMove={attackMove}
-              opponent={opponent}
-            />
-          </>
-        )}
-      </div>
+              <BattleBox
+                state={state}
+                setNextAction={setNextAction}
+                backUpPlayers={backUpPlayers}
+                switchPlayer={switchPlayer}
+                player={player}
+                userTeam={userTeam}
+                attackMove={attackMove}
+                opponent={opponent}
+              />
+            </>
+          )}
+        </div>
+      </GameLayout>
     </>
   );
 };

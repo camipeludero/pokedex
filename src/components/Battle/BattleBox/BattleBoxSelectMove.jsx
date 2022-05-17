@@ -1,25 +1,27 @@
 import React from "react";
-import Button from "../../Button/Button";
+import { Button } from "@mui/material";
 
 const BattleBoxSelectMove = ({ setNextAction, backUpPlayers }) => {
   return (
     <div>
       <Button
-        variant={"secondary"}
-        text={"FIGHT"}
-        onClickFunction={() =>
+        variant={"contained"}
+        onClick={() =>
           setNextAction("select-pokemon-move", "Which attack will you use?")
         }
-      />
+      >
+        FIGHT
+      </Button>
 
       {backUpPlayers.length > 0 && (
         <Button
-          variant={"secondary"}
-          text={"SWITCH"}
-          onClickFunction={() =>
+          variant={"contained"}
+          onClick={() =>
             setNextAction("select-pokemon", "Which Pokemon will you use?")
           }
-        />
+        >
+          SWITCH
+        </Button>
       )}
     </div>
   );

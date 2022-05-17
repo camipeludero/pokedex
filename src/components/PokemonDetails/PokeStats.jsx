@@ -26,21 +26,19 @@ const PokeStats = ({ pokemon }) => {
       <h5>Stats</h5>
       {pokemon.stats &&
         pokemon.stats.map((stat) => (
-          <>
-            <div className="pokeStat">
-              <div className="stat_label">
-                <span key={stat.name}>{stat.name}</span>
-              </div>
-              <div className="stat_value">{stat.value}</div>
-              <div className="stat_progress">
-                {}
-                <StatProgress
-                  variant="determinate"
-                  value={(stat.value * 100) / 200}
-                />
-              </div>
+          <div className="pokeStat" key={stat.name}>
+            <div className="stat_label">
+              <span key={stat.name}>{stat.name}</span>
             </div>
-          </>
+            <div className="stat_value">{stat.value}</div>
+            <div className="stat_progress">
+              {}
+              <StatProgress
+                variant="determinate"
+                value={(stat.value * 100) / 200}
+              />
+            </div>
+          </div>
         ))}
     </div>
   );

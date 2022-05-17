@@ -6,9 +6,7 @@ const Pokedex = () => {
   return (
     <>
       <Layout>
-        <section className="container">
-          <PokemonListContainer searchConfig={false} />
-        </section>
+        <PokemonListContainer action={"pokedex"} searchConfig={false} />
       </Layout>
     </>
   );

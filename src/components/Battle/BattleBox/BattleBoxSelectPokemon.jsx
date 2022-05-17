@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "../../Button/Button";
+import { Button } from "@mui/material";
 
 const BattleBoxSelectPokemon = ({
   backUpPlayers,
@@ -12,13 +12,14 @@ const BattleBoxSelectPokemon = ({
     <div>
       {backUpPlayers.map((pokemon) => (
         <Button
-          variant={"pokemon"}
-          text={pokemon.name}
-          onClickFunction={() => (
+          variant={"contained"}
+          onClick={() => (
             switchPlayer(player, pokemon, userTeam, "user"),
             setNextAction("select-pokemon-move", "Which attack will you use?")
           )}
-        />
+        >
+          {pokemon.name}
+        </Button>
       ))}
     </div>
   );

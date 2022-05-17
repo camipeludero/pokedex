@@ -1,8 +1,10 @@
 import React, { useState, useContext } from "react";
 import { Context } from "../../../context/Context";
-import PokemonList from "../../../components/Battle/PokemonList";
+import PokemonListContainer from "../../../components/PokemonList/PokemonListContainer";
 import { types } from "../../../services/types/types";
 import { shuffleArray } from "../../../services/helpers/functions";
+import Layout from "../../../layouts/Main/Layout";
+import SelectionBox from "../../../components/Battle/Selection/SelectionBox";
 
 const Selection = () => {
   const { state, dispatch, pokemon_data } = useContext(Context);
@@ -66,27 +68,28 @@ const Selection = () => {
     }, 2000);
   };
 
+  const selectPokemon = (id, pokemon_data, is_selected) => {
+    dispatch({
+      type: types.SELECT_POKEMON,
+      id,
+      pokemon_data,
+      is_selected,
+    });
+  };
+
   return (
     <>
-      <div>
-        <h2>Select your team</h2>
-        {/*todo: add search input */}
-        <div>
-          {state.selected_pokemon.length == 3 &&
-            (state.isLoading ? (
-              <p>Waiting for opponent...</p>
-            ) : (
-              <input
-                type="button"
-                value="Confirm team"
-                onClick={() => {
-                  onReady(confirmTeam(state.selected_pokemon));
-                }}
-              />
-            ))}
-        </div>
-        <PokemonList />
-      </div>
+      <Layout>
+        <SelectionBox
+          state={state}
+          onReady={onReady}
+          confirmTeam={confirmTeam}
+        />
+        <PokemonListContainer
+          selectPokemon={selectPokemon}
+          action={"select-pokemon"}
+        />
+      </Layout>
     </>
   );
 };

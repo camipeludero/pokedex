@@ -57,7 +57,7 @@ function App() {
       });
   }, [pokemon_loading]);
 
-  console.log(pokemon_data);
+  console.log(state);
 
   return (
     <>

@@ -15,7 +15,7 @@ const PokeInfo = ({ pokemon }) => {
         {pokemon.abilities &&
           pokemon.abilities.map((ability) => (
             <>
-              <p key={ability.slot}>{ability.ability.name}</p>
+              <p key={ability.ability.name}>{ability.ability.name}</p>
             </>
           ))}
         <p className="pokeInfo__label">Abilities</p>
