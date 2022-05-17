@@ -118,14 +118,14 @@ const Battle = () => {
       } else {
         //el usuario ya no tiene mas pokemons para cambiar -> GAME OVER
         faintPlayer(player, "user");
-
+        //TODO: CAMBIAR DINAMICA AL PERDER LA PARTIDA
         setTimeout(() => {
           dispatch({
             type: types.GAME_OVER,
           });
         }, 4500);
 
-        alert("GAME OVER");
+        alert("GAME OVER"); //previsorio
       }
     }
   };
@@ -169,21 +169,23 @@ const Battle = () => {
       } else {
         //el oponente ya no tiene mas pokemons para cambiar -> WIN
         faintPlayer(opponent, "opponent");
-
+        //TODO: CAMBIAR DINAMICA AL GANAR LA PARTIDA
         setTimeout(() => {
           dispatch({
             type: types.WIN,
           });
-          alert("YOU WIN!");
+          alert("YOU WIN!"); //previsorio
         }, 4500);
       }
     }
   };
 
-  //todo: cambiar el texto de los movimientos
-  //todo: FIGHT / SWITCH -> agregar boton de volver atras
-  //play again button
-  //eliminar el estado del juego al salir de la pagina
+  /* To-do:
+
+  [] cambiar el texto de los movimientos - agregar animaciones
+  [] FIGHT / SWITCH -> agregar boton de volver atras
+  [] play again button
+  [] reiniciar el juego al salir de la pagina */
 
   /* componentDidMount() {
       

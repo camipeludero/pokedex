@@ -7,7 +7,6 @@ export const battleGameReducer = (state, action) => {
     /* Selection Reducers */
 
     case types.SELECT_POKEMON:
-    case types.SELECT_POKEMON:
       let pokemons = [...state.pokemons];
       let selected_pokemon = [...state.selected_pokemon];
 
