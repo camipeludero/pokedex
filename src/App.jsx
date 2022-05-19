@@ -8,6 +8,9 @@ import useGetPokemons from "./services/helpers/useGetPokemons";
 import useGetMoves from "./services/helpers/useGetMoves";
 import "./assets/styles/styles.css";
 
+import { authInitState, authReducer } from "./services/auth/authReducer";
+import { AuthContext } from "./services/auth/AuthContext";
+
 function App() {
   const [pokemon_data, pokemon_loading, pokemon_error] = useGetPokemons(
     "https://pokeapi.co/api/v2",
@@ -46,6 +49,15 @@ function App() {
   };
 
   /* ------ */
+  const [authState, authDispatch] = useReducer(authReducer, {}, authInitState);
+
+  useEffect(() => {
+    if (authState.isAuthenticated) {
+      localStorage.setItem("auth", JSON.stringify(authState));
+    } else {
+      localStorage.removeItem("auth");
+    }
+  }, [authState.isAuthenticated]);
 
   const [state, dispatch] = useReducer(battleGameReducer, INITIAL_STATE);
 
@@ -57,21 +69,21 @@ function App() {
       });
   }, [pokemon_loading]);
 
-  console.log(state);
-
   return (
     <>
-      <Context.Provider
-        value={{
-          state,
-          dispatch,
-          pokemon_data,
-          pokemon_loading,
-          pokemon_error,
-        }}
-      >
-        <AppRoutes />
-      </Context.Provider>
+      <AuthContext.Provider value={{ authState, authDispatch }}>
+        <Context.Provider
+          value={{
+            state,
+            dispatch,
+            pokemon_data,
+            pokemon_loading,
+            pokemon_error,
+          }}
+        >
+          <AppRoutes />
+        </Context.Provider>
+      </AuthContext.Provider>
     </>
   );
 }

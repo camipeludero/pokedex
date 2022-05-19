@@ -1,6 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root{
+    /* Color styles */
+    --black: #18191F;
+    --black-800: #474A57;
+    --black-300: #9FA4B4;
+    --black-700: #969BAB;
+    --black-200: #EEEFF4;
+    --black-100: #F4F5F7;
+    --white: #FFFFFF;
     --rock: #B69E31;
     --ghost: #70559B;
     --steel: #B7B9D0;
@@ -18,7 +26,84 @@
     --bug: #A7B723;
     --fire: #F57D31;
     --electric: #FFBD12;
+
+    
+--contra--blue: #1947E5;
+--contra--blue-100: #E9E7FC;
+--colors--blue-800: #8094FF;
+
+--colors--pink: #FF89BB;
+--colors--pink-800: #FFC7DE;
+--colors--pink-200: #FFF3F8;
+--black: #18191F;
+
+--colors--yellow: #FFBD12;
+--colors--yellow-800: #FFD465;
+--colors--yellow-100: #FFF4CC;
+--colors--green: #00C6AE;
+--colors--green-800: #61E4C5;
+--colors--green-100: #D6FCF7;
+--colors--red: #F95A2C;
+--colors--red-800: #FF9692;
+--colors--red-100: #FFE8E8;
+
+
+
+/* Effect styles */
+--1px-line: inset 0px -1px 0px rgba(24, 24, 24, 1);
+--shadow--200:  0px 2px 0px rgba(24, 25, 31, 1);
+--shadow--400:  0px 4px 0px rgba(24, 25, 31, 1);
+--shadow--600:  0px 6px 0px rgba(24, 25, 31, 1);
+--shadow--200:  0px -2px 0px rgba(24, 25, 31, 1);
+--shadow--400:  0px -4px 0px rgba(24, 25, 31, 1);
+--shadow--600:  0px -6px 0px rgba(24, 25, 31, 1);
+
 }
+
+   /* Text_size styles */
+   .extra_bold_44{font: normal 800 44px/54px 'Azeret Mono';}
+   .bold_44{ font: normal 700 44px/54px 'Azeret Mono';}
+   .medium_44{ font: normal 500 44px/54px 'Azeret Mono';}
+   
+   .bold_spaced_36{ font: normal 700 36px/40px 'Azeret Mono'; letter-spacing: 8px;
+       text-transform: uppercase;}
+   .extra_bold_36{ font: normal 800 36px/40px 'Azeret Mono';}
+   .bold_36{ font: normal 800 36px/40px 'Azeret Mono';}
+   .medium_36{ font: normal 500 36px/40px 'Azeret Mono';}
+   
+   .extra_bold_27{ font: normal 800 27px/32px 'Azeret Mono';}
+   .bold_27{ font: normal 700 27px/32px 'Azeret Mono';}
+   .medium_27{ font: normal 500 27px/32px 'Azeret Mono';}
+   
+   .extra_bold_24{ font: normal 800 24px/28px 'Azeret Mono';}
+   .bold_24{ font: normal 700 24px/28px 'Azeret Mono';}
+   .medium_24{ font: normal 500 24px/28px 'Azeret Mono';}
+   
+   .extra_bold_21{ font: normal 800 21px/28px 'Azeret Mono';}
+   .bold_21{ font: normal 700 21px/28px 'Azeret Mono';}
+   .medium_21{ font: normal 500 21px/28px 'Azeret Mono';}
+   
+   .extra_bold_17{ font: normal 800 17px/24px 'Azeret Mono';}
+   .bold_17{ font: normal 700 17px/24px 'Azeret Mono';}
+   .medium_17{ font: normal 500 17px/24px 'Azeret Mono';}
+   
+   .extra_bold_15{ font: normal 800 15px/20px 'Azeret Mono';}
+   .bold_15{ font: normal 700 15px/20px 'Azeret Mono';}
+   .medium_15{ font: normal 500 15px/20px 'Azeret Mono';}
+   
+   .extra_bold_13{ font: normal 800 13px/18px 'Azeret Mono';}
+   .bold_13{ font: normal 700 13px/18px 'Azeret Mono';}
+   .medium_13{ font: normal 500 13px/18px 'Azeret Mono';}
+   
+   .extra_bold_12{ font: normal 800 12px/ 'Azeret Mono';}
+   .bold_12{ font: normal 700 12px/ 'Azeret Mono';}
+   .medium_12{ font: normal 500 12px/ 'Azeret Mono';}
+   
+   .extra_bold_11{ font: normal 800 11px/16px 'Azeret Mono';}
+   .bold_11{ font: normal 700 11px/16px 'Azeret Mono';}
+   .medium_11{ font: normal 500 11px/16px 'Azeret Mono';}
+
+
 
 *, *::before, *::after{
     margin: 0;
@@ -55,6 +140,7 @@ nav{
     position: absolute;
     bottom: 0;
     margin: 10px 0 40px 0;
+     
 }
 
 .selected-link{
@@ -138,6 +224,10 @@ nav{
 .bg_electric {
 
     background: var(--electric);
+}
+
+.color_black{
+    color: var(--black)
 }
 
 

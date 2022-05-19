@@ -1,0 +1,36 @@
+.TextField{
+    border: 2px solid var(--black);
+border-radius: 16px;
+    display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px;
+gap: 12px;
+padding: 16px 14px;
+    
+}
+
+.Input{
+    border: none;
+    font-family: 'Azeret Mono';
+font-style: normal;
+font-weight: 500;
+font-size: 21px;
+line-height: 28px;
+color: var(--black);
+flex: none;
+order: 1;
+flex-grow: 0;
+}
+
+.Input::placeholder{
+    color: var(--black-800);
+}
+
+.Icon{
+    width: 24px;
+    height: 24px;
+    flex: none;
+order: 0;
+flex-grow: 0;
+}
