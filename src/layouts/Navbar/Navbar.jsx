@@ -7,11 +7,7 @@ import AccountCircleRoundedIcon from "@mui/icons-material/AccountCircleRounded";
 import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
-  let activeStyle = {
-    textDecoration: "underline",
-  };
-
-  let activeClassName = "underline";
+  let activeClassName = style.navbar_item_active;
 
   const links = [
     { icon: <CatchingPokemonIcon />, title: "Pokedex", link: "/pokedex" },
@@ -25,7 +21,9 @@ const Navbar = () => {
         return (
           <NavLink
             to={link.link}
-            style={({ isActive }) => (isActive ? activeStyle : undefined)}
+            className={({ isActive }) =>
+              isActive ? activeClassName : undefined
+            }
           >
             <div className={style.navbar_item}>
               {link.icon}

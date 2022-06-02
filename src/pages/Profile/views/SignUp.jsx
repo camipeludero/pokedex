@@ -31,12 +31,9 @@ const SignUp = () => {
     handleLogin
   );
 
-  console.log(form);
-
   return (
     <Layout>
       <Container component="main" maxWidth="xs">
-        <CssBaseline />
         <Box
           sx={{
             marginTop: 1,

@@ -1,5 +1,4 @@
-import React, { useState, useContext } from "react";
-import LoadingPage from "../../components/Loading/LoadingPage";
+import React, { useContext } from "react";
 import Layout from "../../layouts/Main/Layout";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../services/auth/AuthContext";
