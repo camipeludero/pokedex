@@ -4,7 +4,7 @@ import AppRoutes from "./routes/AppRoutes";
 import { battleGameReducer } from "./services/reducers/battleGameReducer";
 import { types } from "./services/types/types";
 
-import useGetPokemons from "./services/helpers/useGetPokemons";
+import useGetPokemons from "./services/hooks/useGetPokemons";
 import useGetMoves from "./services/helpers/useGetMoves";
 import "./assets/styles/styles.css";
 
@@ -16,26 +16,6 @@ function App() {
     "https://pokeapi.co/api/v2",
     80
   );
-
-  const [moves, loadingMoves, errorMoves] = useGetMoves(
-    "https://pokeapi.co/api/v2",
-    100
-  );
-
-  const getMovesByPokemon = (pokemon_data, moves) => {
-    pokemon_data.forEach((pokemon) => {
-      pokemon.moves = [];
-      moves.forEach((move) => {
-        move.learned_by_pokemon.forEach((item) => {
-          if (item.name == pokemon.name) {
-            pokemon.moves.push(move);
-          }
-        });
-      });
-    });
-  };
-
-  getMovesByPokemon(pokemon_data, moves);
 
   const INITIAL_STATE = {
     pokemons: [],

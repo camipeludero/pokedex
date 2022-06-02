@@ -8,8 +8,15 @@ const useGetPokemons = (url, limit) => {
         error: null,
     });
 
+    const [moves, setMoves] = useState({
+        data: [],
+        loading: true,
+        error: null,
+    });
+
     useEffect(() => {
-        getPokemons();
+        getPokemons()
+        getMoves()
     }, []);
 
     const getPokemons = async () => {
@@ -57,6 +64,55 @@ const useGetPokemons = (url, limit) => {
                 loading: false,
             });
         }
+    };
+
+    const getMoves = async () => {
+        try {
+            const res = await axios(`${url}/move?limit=${limit}`);
+            let all = [];
+
+            for (var i = 0; i < res.data.results.length; i++) {
+                const details = await axios(`${res.data.results[i].url}`);
+
+                let aux = {
+                    id: details.data.id,
+                    name: details.data.name,
+                    accuracy: details.data.accuracy,
+                    power: details.data.power,
+                    type: details.data.type.name,
+                    learned_by_pokemon: details.data.learned_by_pokemon,
+                };
+
+                all.push(aux);
+            }
+
+            setMoves({
+                data: all,
+                error: null,
+                loading: false,
+            });
+
+            moves.data.length > 0 && getMovesByPokemon(pokemons.data, moves.data)
+        } catch (error) {
+            setMoves({
+                data: [],
+                error: error,
+                loading: false,
+            });
+        }
+    };
+
+    const getMovesByPokemon = (pokemon_data, moves) => {
+        pokemon_data.forEach((pokemon) => {
+            pokemon.moves = [];
+            moves.forEach((move) => {
+                move.learned_by_pokemon.forEach((item) => {
+                    if (item.name == pokemon.name) {
+                        pokemon.moves.push(move);
+                    }
+                });
+            });
+        });
     };
 
     return [pokemons.data, pokemons.loading, pokemons.error];

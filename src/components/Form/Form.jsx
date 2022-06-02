@@ -1,19 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Button from "@mui/material/Button";
 
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import TextField from "./TextField";
-import YellowButton from "../Button/YellowButton";
+import Button from "../Button/Button";
 
 const Form = ({ formType, handleChange, handleSubmit }) => {
   return (
-    <Box component="form" noValidate sx={{ mt: 3 }}>
+    <Box component="form" noValidate>
       <Grid container spacing={2}>
         <Grid item xs={12}>
-          <h3 className="extra_bold_36">
+          <h3 className="extra_bold_27">
             {formType === "signup" ? "Sign up" : "Login"}
           </h3>
         </Grid>
@@ -45,9 +44,9 @@ const Form = ({ formType, handleChange, handleSubmit }) => {
           />
         </Grid>
       </Grid>
-      <YellowButton onClick={handleSubmit} variant="block">
+      <Button onClick={handleSubmit} variant="yellow" width="block">
         Registrarme
-      </YellowButton>
+      </Button>
 
       <Grid container justifyContent="flex-end">
         <Grid item>

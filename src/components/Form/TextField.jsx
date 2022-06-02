@@ -16,7 +16,7 @@ const TextField = ({ name, type, placeholder, onChange }) => {
         <LockOutlinedIcon />
       )}
       <input
-        className={`${style.Input} medium_21 color_black`}
+        className={`${style.Input} medium_17 color_black`}
         type={type}
         name={name}
         required
